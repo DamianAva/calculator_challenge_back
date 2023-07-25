@@ -1,0 +1,40 @@
+{
+  "name": "calculator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "start": "node index.js",
+    "test": "nyc mocha --recursive --reporter spec",
+    "migrate": "knex migrate:latest --knexfile database/config.js",
+    "make": "knex migrate:make --knexfile database/config.js",
+    "rollback": "knex migrate:rollback --knexfile database/config.js",
+    "seed-make": "knex seed:make --knexfile database/config.js",
+    "seed-run": "knex seed:run --knexfile database/config.js"
+  },
+  "author": "Sergio Damian Echevarria",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.4.0",
+    "bcryptjs": "^2.4.3",
+    "bookshelf": "^1.2.0",
+    "bookshelf-soft-delete": "^5.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "express-validator": "^7.0.1",
+    "jsonwebtoken": "^9.0.1",
+    "knex": "^0.21.21",
+    "mysql2": "^2.3.3"
+  },
+  "devDependencies": {
+    "chai": "^4.3.7",
+    "eslint": "^8.45.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-mocha": "^10.1.0",
+    "mocha": "^10.2.0",
+    "nodemon": "^3.0.1",
+    "sinon": "^15.2.0"
+  }
+}
