@@ -1,14 +1,18 @@
 const { check } = require('express-validator');
-const { errorHandler } = require('../errorHandler');
+const { errorHandler } = require('./validator');
 
-const login = [
+const operate = [
     check('operandOne')
-        .isFloat
-        .withMessage('Operand must be a number'),
+        .toFloat()
+        .isFloat()
+        .withMessage('Operand must be a number')
+        .bail(),
 
     check('operandTwo')
-        .isFloat
-        .withMessage('Operand must be a number'),
+        .toFloat()
+        .isFloat()
+        .withMessage('Operand must be a number')
+        .bail(),
 
     check('operator')
         .notEmpty()
@@ -20,5 +24,5 @@ const login = [
 ];
 
 module.exports = {
-    login,
+    operate,
 };

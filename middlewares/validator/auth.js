@@ -1,5 +1,5 @@
 const { check } = require('express-validator');
-const { errorHandler } = require('../errorHandler');
+const { errorHandler } = require('./validator');
 
 const login = [
     check('username')
