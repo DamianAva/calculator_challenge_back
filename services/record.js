@@ -1,7 +1,7 @@
 const recordRepository = require('../repositories/record');
 
-const getByUserId = async (userId, page = 1, limit = 10, filtersRecords, sort, order) => {
-    const offset = (page + 1) * limit;
+const getByUserId = async (userId, page = 0, limit = 10, filtersRecords, sort, order) => {
+    const offset = page * limit;
     const filters = filtersRecords || {};
 
     return recordRepository.getByUserId(userId, offset, limit, filters, sort, order);
